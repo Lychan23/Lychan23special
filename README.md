@@ -28,5 +28,4 @@ $ cd Lychan23special
 $ npm install
 
 ## Usage 
-```bash
 $ npm start

@@ -1,0 +1,74 @@
+Exception handling in C++ allows you to manage and handle errors or exceptional situations that may occur during the execution of your code. It provides a structured way to handle and propagate errors, improving code reliability. Here's an overview of exception handling in C++:
+
+1. Throwing Exceptions:
+   - When an error or exceptional condition occurs in your code, you can throw an exception using the `throw` keyword followed by an expression.
+   - The expression can be of any type, including built-in types, objects, or even derived from the `std::exception` class.
+   - Example:
+     ```cpp
+     if (divisor == 0) {
+         throw std::runtime_error("Division by zero error");
+     }
+     ```
+
+2. Catching Exceptions:
+   - To handle exceptions, you use a `try-catch` block.
+   - The `try` block encloses the code that may throw an exception.
+   - The `catch` block follows the `try` block and specifies the exception type(s) it can handle.
+   - If an exception is thrown within the `try` block, the corresponding `catch` block that matches the exception type is executed.
+   - Example:
+     ```cpp
+     try {
+         // Code that may throw an exception
+     }
+     catch (const std::exception& e) {
+         // Exception handling code
+     }
+     ```
+
+3. Multiple Catch Blocks:
+   - You can have multiple `catch` blocks to handle different types of exceptions.
+   - The `catch` blocks are evaluated in order, and the first matching block is executed.
+   - More specific exception types should be caught before more general exception types.
+   - Example:
+     ```cpp
+     try {
+         // Code that may throw an exception
+     }
+     catch (const std::logic_error& e) {
+         // Handle logic_error exceptions
+     }
+     catch (const std::runtime_error& e) {
+         // Handle runtime_error exceptions
+     }
+     catch (const std::exception& e) {
+         // Handle other exceptions
+     }
+     ```
+
+4. Handling Uncaught Exceptions:
+   - If an exception is not caught by any `catch` block, it propagates up the call stack until it is caught or terminates the program.
+   - To catch all uncaught exceptions, you can use a catch-all `catch` block without specifying the exception type.
+   - Example:
+     ```cpp
+     try {
+         // Code that may throw an exception
+     }
+     catch (...) {
+         // Handle all exceptions
+     }
+     ```
+
+5. Creating Custom Exception Types:
+   - You can create your own exception types by deriving them from the `std::exception` class or any of its derived classes.
+   - Custom exception types can provide additional information about specific errors or exceptional conditions.
+   - Example:
+     ```cpp
+     class MyException : public std::exception {
+     public:
+         const char* what() const noexcept override {
+             return "My custom exception";
+         }
+     };
+     ```
+
+Exception handling allows you to gracefully handle errors and exceptional situations in your code. By throwing exceptions and catching them in appropriate places, you can handle errors, provide error messages, and recover from exceptional conditions, improving the robustness and reliability of your programs.

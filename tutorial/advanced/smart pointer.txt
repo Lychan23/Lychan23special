@@ -1,0 +1,41 @@
+Smart pointers in C++ are a set of classes that provide automatic memory management for dynamically allocated objects. They help in preventing memory leaks and managing the lifetime of objects by automatically deallocating memory when it is no longer needed. C++ provides three types of smart pointers: `unique_ptr`, `shared_ptr`, and `weak_ptr`. Let's explore each one:
+
+1. unique_ptr:
+   - `unique_ptr` provides exclusive ownership of the dynamically allocated object.
+   - It ensures that only one `unique_ptr` can point to the object at a time.
+   - When a `unique_ptr` goes out of scope or is explicitly reset, it automatically deletes the associated object.
+   - Example usage:
+     ```cpp
+     std::unique_ptr<int> ptr(new int(5));
+     // Use ptr...
+     // No need to explicitly delete the object
+     ```
+   - `unique_ptr` cannot be copied, only moved. This enforces the exclusive ownership.
+
+2. shared_ptr:
+   - `shared_ptr` allows multiple pointers to share ownership of the same object.
+   - It keeps track of the number of shared references to the object.
+   - When the last `shared_ptr` pointing to the object goes out of scope or is reset, the object is deleted.
+   - Example usage:
+     ```cpp
+     std::shared_ptr<int> ptr1(new int(5));
+     std::shared_ptr<int> ptr2 = ptr1;
+     // Use ptr1 and ptr2...
+     // No need to explicitly delete the object
+     ```
+   - `shared_ptr` maintains a reference count internally and deallocates the object when the reference count reaches zero.
+
+3. weak_ptr:
+   - `weak_ptr` is used in conjunction with `shared_ptr` to prevent strong reference cycles and dangling references.
+   - It provides a non-owning weak reference to an object managed by `shared_ptr`.
+   - Unlike `shared_ptr`, `weak_ptr` does not contribute to the reference count of the object.
+   - Example usage:
+     ```cpp
+     std::shared_ptr<int> sharedPtr(new int(5));
+     std::weak_ptr<int> weakPtr = sharedPtr;
+     // Use sharedPtr or weakPtr...
+     // Check validity before accessing the object using weakPtr.lock()
+     ```
+   - `weak_ptr` allows you to check if the object still exists by calling the `lock()` function. It returns a `shared_ptr` to the object if it is still valid.
+
+Smart pointers provide automatic memory management, reducing the chances of memory leaks and dangling pointers. They handle deallocation automatically based on ownership semantics. It is important to choose the appropriate smart pointer based on the ownership and sharing requirements of the objects. Using smart pointers helps in writing safer and more maintainable code by eliminating the need for explicit memory deallocation.

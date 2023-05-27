@@ -1,0 +1,50 @@
+File Input/Output (I/O) operations in C++ allow you to read data from files and write data to files using file streams. File streams provide convenient and flexible ways to interact with files. Here's an overview of reading from and writing to files using file streams in C++:
+
+1. Including the Necessary Headers:
+   - To work with file streams, include the `<fstream>` header, which provides classes for file I/O operations.
+
+2. Opening a File:
+   - To read from or write to a file, you need to open it using an appropriate file stream object.
+   - For reading, use an input file stream (ifstream) object and call its `open()` function, providing the file name as a parameter.
+     For example: `ifstream inputFile("filename.txt");`
+   - For writing, use an output file stream (ofstream) object and call its `open()` function, providing the file name as a parameter.
+     For example: `ofstream outputFile("filename.txt");`
+   - If the specified file does not exist, it will be created when using an output file stream.
+
+3. Reading from a File:
+   - After opening an input file stream, you can read data from the file using various input operators (`>>`) or member functions of the ifstream object.
+   - Example of reading from a file:
+     ```cpp
+     ifstream inputFile("input.txt");
+     if (inputFile.is_open()) {
+         int number;
+         while (inputFile >> number) {
+             // Process the read number
+             cout << number << " ";
+         }
+         inputFile.close();
+     }
+     ```
+
+4. Writing to a File:
+   - After opening an output file stream, you can write data to the file using various output operators (`<<`) or member functions of the ofstream object.
+   - Example of writing to a file:
+     ```cpp
+     ofstream outputFile("output.txt");
+     if (outputFile.is_open()) {
+         outputFile << "Hello, world!" << endl;
+         outputFile << "This is a line of text." << endl;
+         outputFile.close();
+     }
+     ```
+
+5. Error Handling:
+   - It is important to check whether the file operations were successful or encountered any errors.
+   - You can use the `is_open()` member function to determine if the file was opened successfully.
+   - Additionally, you can check for other error conditions using functions like `fail()`, `eof()`, or `bad()`.
+
+6. Closing a File:
+   - After reading from or writing to a file, it is important to close the file using the `close()` member function of the file stream object.
+   - This ensures that any pending operations are completed and the resources associated with the file stream are released.
+
+Remember to handle file I/O operations carefully and consider error handling to ensure the proper functioning of your program.

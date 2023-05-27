@@ -1,0 +1,34 @@
+The C++ Standard Library has been continuously evolving with each new C++ standard, introducing additional features and improvements to the language. Here's an overview of some key features introduced in newer C++ standards (C++11, C++14, C++17, C++20):
+
+C++11:
+1. Smart Pointers: `std::shared_ptr`, `std::unique_ptr`, and `std::weak_ptr` provide automatic memory management and ownership semantics.
+2. Lambda Expressions: Inline functions or function objects that can be defined directly at the call site.
+3. Move Semantics: Introduction of move constructors and move assignment operators for efficient resource management.
+4. Range-Based for Loop: Simplified syntax for iterating over elements in a container.
+5. Type Inference (`auto`): Allows automatic type deduction during variable initialization.
+6. Thread Support: Standardization of multithreading support with `std::thread`, `std::mutex`, `std::condition_variable`, etc.
+7. Regular Expressions: Standardized regular expression library with `<regex>` header.
+8. Rvalue References: Support for binding rvalues and enabling move semantics.
+
+C++14:
+1. Binary Literals and Digit Separators: Improved readability by allowing binary literals (`0b`) and digit separators (`'`) in numeric literals.
+2. Generic Lambdas: Lambda expressions with auto parameters, enabling generic code.
+3. Return Type Deduction for Functions: The compiler can deduce the return type of a function based on the return statement.
+4. `std::make_unique`: Convenience function to create a `std::unique_ptr` with automatic type deduction.
+
+C++17:
+1. Structured Bindings: Decomposition of objects into individual variables using a single declaration statement.
+2. Fold Expressions: Variadic templates can be expanded with folding expressions to perform operations like summing elements.
+3. `std::optional`: A wrapper that can hold a value or be empty, providing a nullable type.
+4. `std::variant`: A type-safe union that can hold different types of values.
+5. Filesystem Library: Standardization of filesystem operations with the `<filesystem>` header.
+
+C++20:
+1. Concepts: Enables the definition of requirements on template arguments, allowing for more expressive and concise template code.
+2. Ranges: Introduces a new range-based programming paradigm with the `std::ranges` library, providing algorithms and range adaptors.
+3. Coroutines: Allows writing asynchronous code in a more sequential manner with the introduction of coroutines.
+4. Modules: Introduces a new modularization system to improve build times and control the visibility of code.
+5. Calendar and Timezone Library: `<chrono>` library enhancements with the addition of calendars, time zones, and time conversions.
+6. Three-Way Comparisons: Simplifies the implementation of comparison operators with the introduction of the `<compare>` header.
+
+These are just a few highlights of the additional features introduced in C++11, C++14, C++17, and C++20. Each new C++ standard brings various other improvements, language enhancements, and additions to the Standard Library, making C++ a more powerful and expressive language.

@@ -1,0 +1,109 @@
+Advanced Object-Oriented Programming (OOP) concepts in C++ build upon the basic principles of OOP and provide additional flexibility and extensibility in designing complex systems. Let's explore some of these advanced concepts:
+
+1. Virtual Functions:
+   - Virtual functions allow you to achieve runtime polymorphism in C++.
+   - When a base class declares a function as virtual, it enables derived classes to provide their own implementation of that function.
+   - The function to be overridden in derived classes is identified by the same function signature and the `virtual` keyword.
+   - Example:
+     ```cpp
+     class Base {
+     public:
+         virtual void print() {
+             std::cout << "Base class print() function" << std::endl;
+         }
+     };
+
+     class Derived : public Base {
+     public:
+         void print() override {
+             std::cout << "Derived class print() function" << std::endl;
+         }
+     };
+
+     int main() {
+         Base* ptr = new Derived();
+         ptr->print(); // Calls Derived class print() function
+         delete ptr;
+         return 0;
+     }
+     ```
+   - The `override` keyword is used in the derived class to explicitly indicate that the function is intended to override a virtual function in the base class.
+
+2. Abstract Classes:
+   - Abstract classes are classes that cannot be instantiated and serve as a base for derived classes.
+   - They often contain one or more pure virtual functions, which are declared using the `virtual` keyword and set to 0.
+   - Derived classes must override the pure virtual functions to become concrete classes.
+   - Example:
+     ```cpp
+     class AbstractBase {
+     public:
+         virtual void someFunction() = 0; // Pure virtual function
+     };
+
+     class ConcreteDerived : public AbstractBase {
+     public:
+         void someFunction() override {
+             // Provide implementation
+         }
+     };
+     ```
+   - Abstract classes can have non-virtual member functions, member variables, and other concrete functions.
+
+3. Interfaces:
+   - Interfaces are a way to achieve abstraction and specify a contract that classes must adhere to.
+   - In C++, interfaces are commonly implemented using abstract classes with pure virtual functions.
+   - Interfaces define a set of functions that must be implemented by classes that inherit from them.
+   - Example:
+     ```cpp
+     class Interface {
+     public:
+         virtual void doSomething() = 0;
+         virtual int calculate(int a, int b) = 0;
+     };
+
+     class ConcreteImplementation : public Interface {
+     public:
+         void doSomething() override {
+             // Provide implementation
+         }
+
+         int calculate(int a, int b) override {
+             // Provide implementation
+         }
+     };
+     ```
+   - Classes implementing an interface must override all the pure virtual functions defined in the interface.
+
+4. Multiple Inheritance:
+   - Multiple inheritance allows a class to inherit from multiple base classes.
+   - It enables a derived class to inherit and combine the characteristics and behavior of multiple classes.
+   - Example:
+     ```cpp
+     class Base1 {
+     public:
+         void function1() {
+             // Provide implementation
+         }
+     };
+
+     class Base2 {
+     public:
+         void function2() {
+             // Provide implementation
+         }
+     };
+
+     class Derived : public Base1, public Base2 {
+     public:
+         void derivedFunction() {
+             // Use functions from Base1 and Base2
+             function1();
+             function2();
+         }
+     };
+     ```
+   - The derived class `Derived` inherits both `Base1` and `Base2`, allowing it to access and use functions from both base classes.
+
+Advanced OOP concepts provide powerful techniques to design flexible and extensible code. Virtual functions enable polymorphism and
+
+ dynamic dispatch, abstract classes define interfaces and enforce derived class implementations, and multiple inheritance allows combining characteristics from multiple classes. Understanding and utilizing these concepts appropriately can lead to well-designed and maintainable object-oriented systems.

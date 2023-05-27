@@ -1,0 +1,81 @@
+Operator overloading in C++ allows you to redefine the behavior of operators for user-defined types. It enables you to use familiar operators like `+`, `-`, `*`, `/`, `==`, `!=`, etc., with your custom objects, providing a more intuitive and expressive syntax. Here's an overview of operator overloading in C++:
+
+1. Unary Operator Overloading:
+   - Unary operators operate on a single operand.
+   - Example of overloading the unary `-` operator for a custom class `MyClass`:
+     ```cpp
+     class MyClass {
+     private:
+         int value;
+     public:
+         MyClass(int val) : value(val) {}
+
+         MyClass operator-() const {
+             return MyClass(-value);
+         }
+     };
+     ```
+   - The unary `-` operator is overloaded as a member function that returns a new instance of `MyClass` with the negated value.
+
+2. Binary Operator Overloading:
+   - Binary operators operate on two operands.
+   - Example of overloading the binary `+` operator for a custom class `MyClass`:
+     ```cpp
+     class MyClass {
+     private:
+         int value;
+     public:
+         MyClass(int val) : value(val) {}
+
+         MyClass operator+(const MyClass& other) const {
+             return MyClass(value + other.value);
+         }
+     };
+     ```
+   - The binary `+` operator is overloaded as a member function that takes another `MyClass` object as a parameter and returns a new instance of `MyClass` with the sum of the values.
+
+3. Comparison Operator Overloading:
+   - Comparison operators (`==`, `!=`, `<`, `>`, `<=`, `>=`) can be overloaded to define the comparison behavior between objects of a custom class.
+   - Example of overloading the `==` and `!=` operators for a custom class `MyClass`:
+     ```cpp
+     class MyClass {
+     private:
+         int value;
+     public:
+         MyClass(int val) : value(val) {}
+
+         bool operator==(const MyClass& other) const {
+             return value == other.value;
+         }
+
+         bool operator!=(const MyClass& other) const {
+             return value != other.value;
+         }
+     };
+     ```
+   - The `==` and `!=` operators are overloaded as member functions that compare the values of two `MyClass` objects and return the result.
+
+4. Stream Operator Overloading:
+   - Stream insertion (`<<`) and extraction (`>>`) operators can be overloaded to enable streaming of objects to and from streams.
+   - Example of overloading the `<<` and `>>` operators for a custom class `MyClass`:
+     ```cpp
+     class MyClass {
+     private:
+         int value;
+     public:
+         MyClass(int val) : value(val) {}
+
+         friend std::ostream& operator<<(std::ostream& os, const MyClass& obj) {
+             os << obj.value;
+             return os;
+         }
+
+         friend std::istream& operator>>(std::istream& is, MyClass& obj) {
+             is >> obj.value;
+             return is;
+         }
+     };
+     ```
+   - The `<<` and `>>` operators are overloaded as friend functions that perform the desired streaming operations.
+
+Operator overloading allows you to redefine the behavior of operators to work with objects of your custom classes. By overloading operators, you can make your code more readable, concise, and intuitive, closely resembling the natural language of the problem domain. However, it's important to use operator overloading judiciously and consistently to avoid confusion or unexpected behavior.

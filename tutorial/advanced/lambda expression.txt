@@ -1,0 +1,54 @@
+Lambda expressions in C++ are a powerful feature that allows you to create anonymous functions or function objects inline. They provide a concise way to write code and are particularly useful when working with algorithms, functional programming paradigms, or whenever a small function is needed without the need for a named function declaration. Here's an overview of lambda expressions in C++:
+
+1. Lambda Syntax:
+   - The syntax of a lambda expression follows this general form:
+     ```
+     [capture-list](parameters) -> return-type { function-body }
+     ```
+   - The capture-list captures variables from the surrounding context, allowing them to be used within the lambda function.
+   - The parameters define the function's input parameters, similar to a regular function declaration.
+   - The return-type specifies the type of the value returned by the lambda function. It is optional if the function doesn't return a value or if it can be deduced.
+   - The function-body contains the statements and logic of the lambda function.
+
+2. Capture List:
+   - The capture-list, specified within square brackets `[ ]`, determines which variables from the surrounding context are accessible within the lambda function.
+   - By default, variables from the surrounding context are not accessible within the lambda function, and you need to explicitly capture them to use them.
+   - There are different ways to capture variables:
+     - Capture by value: `[variable]` captures the variable by value.
+     - Capture by reference: `[&variable]` captures the variable by reference.
+     - Capture all variables by value: `[=]` captures all variables from the surrounding context by value.
+     - Capture all variables by reference: `[&]` captures all variables from the surrounding context by reference.
+     - Mixed capture: `[variable1, &variable2]` captures `variable1` by value and `variable2` by reference.
+
+3. Examples:
+   - Here are a few examples demonstrating the usage of lambda expressions:
+
+     ```cpp
+     // Example 1: Basic lambda expression
+     auto sum = [](int a, int b) { return a + b; };
+     int result = sum(3, 4); // result = 7
+
+     // Example 2: Capture by value
+     int x = 5;
+     auto increment = [x]() mutable { return ++x; };
+     int result = increment(); // result = 6
+
+     // Example 3: Capture by reference
+     int y = 10;
+     auto decrement = [&y]() { return --y; };
+     int result = decrement(); // result = 9
+
+     // Example 4: Capture all variables by value
+     int a = 2, b = 3;
+     auto product = [=]() { return a * b; };
+     int result = product(); // result = 6
+
+     // Example 5: Capture all variables by reference
+     int c = 4, d = 5;
+     auto division = [&]() { return c / d; };
+     int result = division(); // result = 0
+     ```
+
+   - Lambdas can be used in various contexts such as algorithm functions (e.g., `std::for_each`, `std::transform`), sorting functions (`std::sort`), and more, where concise and inline function definitions are needed.
+
+Lambda expressions provide a convenient way to write small, inline functions without the need for a separate function declaration. They allow for concise code and support functional programming paradigms by enabling the use of functions as objects. Lambda expressions, combined with algorithms and standard library functions, can greatly enhance the expressiveness and readability of your code.

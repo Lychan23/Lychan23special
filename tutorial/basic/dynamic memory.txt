@@ -1,0 +1,39 @@
+Dynamic memory allocation in C++ allows you to allocate and deallocate memory during runtime. The `new` and `delete` operators are used for dynamic memory management. Here's an introduction to dynamic memory allocation using `new` and `delete`:
+
+1. Dynamic Memory Allocation with `new`:
+   - The `new` operator is used to allocate memory for a single object or an array dynamically.
+   - To allocate memory for a single object, use the syntax: `new DataType;`
+     For example: `int* ptr = new int;` allocates memory for a single integer and returns a pointer to the allocated memory.
+   - To allocate memory for an array, use the syntax: `new DataType[size];`
+     For example: `int* arr = new int[5];` allocates memory for an array of 5 integers and returns a pointer to the first element.
+
+2. Using Dynamically Allocated Memory:
+   - After allocating memory dynamically, you can access and manipulate the allocated memory using the pointer returned by `new`.
+   - For example:
+     ```cpp
+     int* ptr = new int;
+     *ptr = 10;       // Store a value in the dynamically allocated memory
+     std::cout << *ptr << std::endl;   // Output: 10
+     ```
+
+3. Deallocating Memory with `delete`:
+   - The `delete` operator is used to deallocate dynamically allocated memory and release the resources.
+   - To deallocate memory for a single object, use the syntax: `delete pointer;`
+     For example: `delete ptr;` deallocates the memory pointed to by `ptr`.
+   - To deallocate memory for an array, use the syntax: `delete[] pointer;`
+     For example: `delete[] arr;` deallocates the memory allocated for the array.
+
+4. Memory Deallocation:
+   - It is essential to deallocate dynamically allocated memory to avoid memory leaks and free up system resources.
+   - After deallocating memory, the pointer becomes invalid, and accessing it may lead to undefined behavior.
+   - Example of memory deallocation:
+     ```cpp
+     int* ptr = new int;
+     *ptr = 10;
+
+     delete ptr;    // Deallocate the dynamically allocated memory
+
+     ptr = nullptr; // Set the pointer to null to avoid dangling pointer
+     ```
+
+Remember to deallocate dynamically allocated memory when it is no longer needed to prevent memory leaks. Proper memory management is crucial for efficient and reliable C++ programs.

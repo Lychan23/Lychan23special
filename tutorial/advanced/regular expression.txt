@@ -1,0 +1,74 @@
+Regular expressions, often referred to as regex, provide a powerful tool for pattern matching and manipulation of text in C++. They allow you to search, match, and modify strings based on specific patterns. Here's an overview of working with regular expressions in C++:
+
+1. Library and Header:
+   - Regular expressions in C++ are part of the Standard Library and can be used by including the `<regex>` header.
+
+2. Regular Expression Syntax:
+   - Regular expressions consist of a combination of normal characters and special metacharacters that define a pattern to be matched.
+   - Some common metacharacters and their meanings:
+     - `.`: Matches any single character.
+     - `*`: Matches zero or more occurrences of the preceding element.
+     - `+`: Matches one or more occurrences of the preceding element.
+     - `?`: Matches zero or one occurrence of the preceding element.
+     - `[]`: Matches any character within the specified character class.
+     - `()`: Groups subexpressions or defines a capture group.
+     - `^`: Matches the beginning of a line/string.
+     - `$`: Matches the end of a line/string.
+     - `|`: Acts as an OR operator.
+   - Example usage:
+     ```cpp
+     #include <iostream>
+     #include <regex>
+
+     int main() {
+         std::string text = "Hello, World!";
+
+         // Regular expression pattern to match "World"
+         std::regex pattern("W.*d");
+
+         // Match the pattern against the text
+         bool isMatch = std::regex_match(text, pattern);
+
+         std::cout << "Match: " << std::boolalpha << isMatch << std::endl;
+         return 0;
+     }
+     ```
+   - This example demonstrates how to check if the pattern "W.*d" matches the string "Hello, World!" using `std::regex_match()`.
+
+3. Regular Expression Functions and Classes:
+   - The `<regex>` header provides several functions and classes for working with regular expressions, including:
+     - `std::regex`: The main class representing a regular expression.
+     - `std::regex_match()`: Matches an entire string against a regular expression.
+     - `std::regex_search()`: Searches for the first occurrence of a regular expression within a string.
+     - `std::regex_replace()`: Replaces occurrences of a regular expression within a string.
+     - `std::smatch`: A class used to store matched results.
+     - `std::sregex_iterator`: An iterator class to iterate over multiple matches within a string.
+     - And more.
+
+4. Example Usage:
+   ```cpp
+   #include <iostream>
+   #include <regex>
+   #include <string>
+
+   int main() {
+       std::string text = "The quick brown fox jumps over the lazy dog.";
+       std::regex pattern("\\b\\w{5}\\b"); // Matches words with 5 characters
+
+       std::sregex_iterator iter(text.begin(), text.end(), pattern);
+       std::sregex_iterator end;
+
+       while (iter != end) {
+           std::smatch match = *iter;
+           std::cout << match.str() << std::endl;
+           ++iter;
+       }
+
+       return 0;
+   }
+   ```
+   - This example finds and prints all the words in the given string `text` that have exactly 5 characters using regular expressions and `std::sregex_iterator`.
+
+Regular expressions provide a flexible and powerful way to search, match, and manipulate text based on specific patterns. They can be used for tasks such as data validation, text parsing, and pattern extraction. Understanding regular expression syntax and the available functions and classes in the `<regex>` header allows you to leverage
+
+ the full capabilities of regular expressions in your C++ programs.

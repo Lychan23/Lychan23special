@@ -26,7 +26,7 @@ This project is created by a guy named Lychan23 that want to help newer develope
 $ git clone https://github.com/Lychan23/Lychan23special.git
 $ cd Lychan23special
 $ npm install
-exit
+```
 
 ## Usage 
 $ npm start

@@ -20,8 +20,6 @@ This project is created by a guy named Lychan23 that want to help newer develope
 
 ## Installation
 
-[Provide instructions on how to install and set up your project. Include any dependencies or requirements.]
-
 ```bash
 $ git clone https://github.com/Lychan23/Lychan23special.git
 $ cd Lychan23special

@@ -8,8 +8,8 @@ using namespace std;
 
 // Function to perform XOR encryption or decryption
 void xorEncryptDecrypt(const string& inputFileName, const string& outputFileName, const string& password) {
-    ifstream inputFile(inputFileName, ios::binary);
-    ofstream outputFile(outputFileName, ios::binary);
+    ifstream inputFile(inputFileName.c_str(), ios::in | ios::binary);
+    ofstream outputFile(outputFileName.c_str(), ios::out | ios::binary);
 
     if (!inputFile.is_open()) {
         throw runtime_error("Error opening input file: " + inputFileName);

@@ -1,0 +1,7 @@
+{
+  "name": "delay-vst",
+  "version": "0.1.0",
+  "dependencies": [
+    "catch2"
+  ]
+}

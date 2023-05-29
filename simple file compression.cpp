@@ -14,27 +14,23 @@ struct Node {
 
 // Comparator for the priority queue
 struct Compare {
-    bool operator()(Node* l, Node* r)
-    {
+    bool operator()(Node* l, Node* r) {
         return l->freq > r->freq;
     }
 };
 
 // Function to create a new Huffman tree node
-Node* getNode(char data, unsigned freq, Node* left, Node* right)
-{
+Node* getNode(char data, unsigned freq, Node* left, Node* right) {
     Node* node = new Node();
     node->data = data;
     node->freq = freq;
     node->left = left;
     node->right = right;
-
     return node;
 }
 
 // Traverses the Huffman tree and stores Huffman codes
-void encode(Node* root, string str, unordered_map<char, string>& huffmanCode)
-{
+void encode(Node* root, string str, unordered_map<char, string>& huffmanCode) {
     if (root == nullptr)
         return;
 
@@ -48,8 +44,7 @@ void encode(Node* root, string str, unordered_map<char, string>& huffmanCode)
 }
 
 // Builds the Huffman tree and generates Huffman codes
-void buildHuffmanTree(string text, unordered_map<char, string>& huffmanCode)
-{
+void buildHuffmanTree(string text, unordered_map<char, string>& huffmanCode) {
     // Count the frequency of each character
     unordered_map<char, unsigned> freq;
     for (char ch : text) {
@@ -80,8 +75,7 @@ void buildHuffmanTree(string text, unordered_map<char, string>& huffmanCode)
 }
 
 // Compresses the input file using Huffman coding
-void compressFile(const string& inputFile, const string& outputFile)
-{
+void compressFile(const string& inputFile, const string& outputFile) {
     ifstream input(inputFile, ios::binary);
     ofstream output(outputFile, ios::binary);
 
@@ -106,8 +100,7 @@ void compressFile(const string& inputFile, const string& outputFile)
     cout << "File compressed successfully!" << endl;
 }
 
-int main()
-{
+int main() {
     string inputFile = "input.txt";
     string compressedFile = "compressed.bin";
 

@@ -10,10 +10,13 @@
                 "UNICODE",
                 "_UNICODE"
             ],
-            "intelliSenseMode": "msvc-x64",
-            "compilerPath": "C:\\TDM-GCC-64\\bin\\g++.exe",
             "cStandard": "c11",
-            "cppStandard": "c++11"
+            "cppStandard": "c++17",
+            "intelliSenseMode": "windows-gcc-x64",
+            "compilerArgs": [
+                "-std=c++11"
+            ],
+            "compilerPath": "C:/TDM-GCC-64/bin/g++.exe"
         }
     ],
     "version": 4

@@ -9,5 +9,6 @@
     "${workspaceFolder}",
     "${vcpkgRoot}C:/TDM-GCC-64/include"
   ],
-  "C_Cpp.default.browse.databaseFilename": "${workspaceFolder}/.vscode/browse.vc.db"
+  "C_Cpp.default.browse.databaseFilename": "${workspaceFolder}/.vscode/browse.vc.db",
+  "C_Cpp.errorSquiggles": "disabled"
 }

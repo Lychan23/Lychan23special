@@ -1,3 +1,13 @@
 {
-    "C_Cpp.default.toolchain": "${env:VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake"
+  "C_Cpp.default.configurationProvider": "ms-vscode.cpptools",
+  "C_Cpp.default.cppStandard": "c++17",
+  "C_Cpp.default.includePath": [
+    "${workspaceFolder}/**",
+    "${vcpkgRoot}C:/TDM-GCC-64/include"
+  ],
+  "C_Cpp.default.browse.path": [
+    "${workspaceFolder}",
+    "${vcpkgRoot}C:/TDM-GCC-64/include"
+  ],
+  "C_Cpp.default.browse.databaseFilename": "${workspaceFolder}/.vscode/browse.vc.db"
 }

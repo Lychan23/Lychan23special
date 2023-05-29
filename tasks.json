@@ -4,12 +4,12 @@
       {
         "label": "Build with vcpkg",
         "type": "shell",
-        "command": "${env:VCPKG_ROOT}C:/TDM-GCC-64/bin/g++.exe",
+        "command": "${env:VCPKG_PATH}C:/TDM-GCC-64/bin/g++.exe",
         "args": [
           "-g",
           "-std=c++11",
-          "-I${env:VCPKG_ROOT}C:/TDM-GCC-64/include",
-          "-L${env:VCPKG_ROOT}C:/TDM-GCC-64/lib",
+          "-I${env:VCPKG_PATH}C:/TDM-GCC-64/include",
+          "-L${env:VCPKG_PATH}C:/TDM-GCC-64/lib",
           "${file}",
           "-o",
           "${fileDirname}/${fileBasenameNoExtension}"

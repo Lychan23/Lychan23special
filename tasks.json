@@ -1,32 +1,32 @@
 {
-    "version": "2.0.0",
-    "tasks": [
-      {
-        "label": "Build with vcpkg",
-        "type": "shell",
-        "command": "${env:VCPKG_PATH}C:/TDM-GCC-64/bin/g++.exe",
-        "args": [
-          "-g",
-          "-std=c++11",
-          "-I${env:VCPKG_PATH}C:/TDM-GCC-64/include",
-          "-L${env:VCPKG_PATH}C:/TDM-GCC-64/lib",
-          "${file}",
-          "-o",
-          "${fileDirname}/${fileBasenameNoExtension}"
-        ],
-        "group": {
-          "kind": "build",
-          "isDefault": true
-        },
-        "presentation": {
-          "echo": true,
-          "reveal": "always",
-          "focus": false,
-          "panel": "shared",
-          "showReuseMessage": true,
-          "clear": false
-        }
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build with vcpkg",
+      "type": "shell",
+      "command": "${env:VCPKG_PATH}C:/TDM-GCC-64/bin/g++.exe",
+      "args": [
+        "-g",
+        "-std=c++11",
+        "-I${env:VCPKG_PATH}C:/TDM-GCC-64/include",
+        "-L${env:VCPKG_PATH}C:/TDM-GCC-64/lib",
+        "${file}",
+        "-o",
+        "${fileDirname}/${fileBasenameNoExtension}",
+        "-lcrypto"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": false
       }
-    ]
-  }
-  
+    }
+  ]
+}

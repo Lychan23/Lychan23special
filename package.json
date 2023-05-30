@@ -1,0 +1,22 @@
+{
+  "name": "lychan23special",
+  "version": "1.0.0",
+  "description": "repository Lychan23 will post their \"Coding\" ;)",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lychan23/Lychan23special.git"
+  },
+  "keywords": [
+    "JavaScript"
+  ],
+  "author": "Lychan23",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Lychan23/Lychan23special/issues"
+  },
+  "homepage": "https://github.com/Lychan23/Lychan23special#readme"
+}

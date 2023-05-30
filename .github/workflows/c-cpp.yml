@@ -8,22 +8,21 @@ on:
 
 jobs:
   build:
-
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Cache
-      uses: actions/cache@v1.2.1
-      with:
-        path: # A directory to store and save the cache
-        key: # An explicit key for restoring and saving the cache
-        restore-keys: # An ordered list of keys to use for restoring the cache if no cache hit occurred for key
-    - name: configure
-      run: ./configure
-    - name: make
-      run: make
-    - name: make check
-      run: make check
-    - name: make distcheck
-      run: make distcheck
+      - uses: actions/checkout@v3
+      - name: Cache
+        uses: actions/cache@v1.2.1
+        with:
+          path: # A directory to store and save the cache
+          key: # An explicit key for restoring and saving the cache
+          restore-keys: # An ordered list of keys to use for restoring the cache if no cache hit occurred for key
+      - name: configure
+        run: ./configure
+      - name: make
+        run: make
+      - name: make check
+        run: make check
+      - name: make distcheck
+        run: make distcheck

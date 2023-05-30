@@ -1,4 +1,4 @@
-name: Build and Test
+name: C# CI
 
 on:
   push:
@@ -9,41 +9,31 @@ on:
       - main
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  build-and-test:
+    runs-on: self-hosted
 
     steps:
-      - name: Checkout repository
+      - name: Checkout code
         uses: actions/checkout@v2
+
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: ~/.nuget/packages
+          key: ${{ runner.os }}-dotnet-${{ hashFiles('**/project.assets.json') }}
+          restore-keys: |
+            ${{ runner.os }}-dotnet-
 
       - name: Setup .NET
         uses: actions/setup-dotnet@v1
         with:
-          dotnet-version: '6.0.x'  # Replace with your desired .NET version
+          dotnet-version: '6.0.x'
 
-      - name: Restore NuGet packages
+      - name: Restore dependencies
         run: dotnet restore
 
       - name: Build project
-        run: dotnet build --configuration Release --no-restore
+        run: dotnet build --configuration Release
 
-  test:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Setup .NET
-        uses: actions/setup-dotnet@v1
-        with:
-          dotnet-version: '6.0.x'  # Replace with your desired .NET version
-
-      - name: Restore NuGet packages
-        run: dotnet restore
-
-      - name: Build project
-        run: dotnet build --configuration Release --no-restore
-
-      - name: Run unit tests
-        run: dotnet test --configuration Release --no-restore --verbosity normal
+      - name: Run tests
+        run: dotnet test --configuration Release --no-build

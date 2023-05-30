@@ -11,18 +11,26 @@ jobs:
     runs-on: self-hosted
 
     steps:
-      - uses: actions/checkout@v3
-      - name: Cache
-        uses: actions/cache@v1.2.1
+      - uses: actions/checkout@v2
+      
+      - name: Cache dependencies
+        uses: actions/cache@v2
         with:
-          path: # A directory to store and save the cache
-          key: # An explicit key for restoring and saving the cache
-          restore-keys: # An ordered list of keys to use for restoring the cache if no cache hit occurred for key
-      - name: configure
+          path: |
+            # Specify the directories to cache
+            <path_to_dependencies_directory>
+          key: ${{ runner.os }}-caching-${{ hashFiles('<path_to_dependencies_directory>/lockfile') }}
+          restore-keys: |
+            ${{ runner.os }}-caching-
+            
+      - name: Configure
         run: ./configure
-      - name: make
+      
+      - name: Build
         run: make
-      - name: make check
+      
+      - name: Run tests
         run: make check
-      - name: make distcheck
+      
+      - name: Make distribution check
         run: make distcheck

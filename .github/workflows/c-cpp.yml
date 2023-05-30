@@ -18,8 +18,8 @@ jobs:
         with:
           path: |
             # Specify the directories to cache
-            <path_to_dependencies_directory>
-          key: ${{ runner.os }}-caching-${{ hashFiles('<path_to_dependencies_directory>/lockfile') }}
+            output
+          key: ${{ runner.os }}-caching-${{ hashFiles('output/lockfile') }}
           restore-keys: |
             ${{ runner.os }}-caching-
             

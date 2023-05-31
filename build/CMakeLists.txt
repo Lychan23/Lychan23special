@@ -1,38 +1,36 @@
 cmake_minimum_required(VERSION 3.12)
-project(Lychan23Special)
+project(Lychan23special)
 
-# Set the C++ standard
-set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
+# Set the C++ standard (optional)
+set(CMAKE_CXX_STANDARD 11)
 
-# Set the path to the Vcpkg toolchain file
-set(VCPKG_TOOLCHAIN "${CMAKE_CURRENT_SOURCE_DIR}/vcpkg/scripts/buildsystems/vcpkg.cmake" CACHE STRING "")
+# Set the vcpkg root directory
+set(VCPKG_ROOT "${CMAKE_CURRENT_SOURCE_DIR}/vcpkg" CACHE STRING "")
 
-# Include the Vcpkg toolchain file
-if(EXISTS ${VCPKG_TOOLCHAIN})
-    message(STATUS "Using Vcpkg toolchain file: ${VCPKG_TOOLCHAIN}")
-    set(CMAKE_TOOLCHAIN_FILE ${VCPKG_TOOLCHAIN})
-else()
-    message(FATAL_ERROR "Vcpkg toolchain file not found: ${VCPKG_TOOLCHAIN}")
-endif()
+# Include the vcpkg toolchain file
+set(CMAKE_TOOLCHAIN_FILE "${VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake" CACHE STRING "")
 
 # Add your source files
 set(SOURCES
-    main.cpp
-    # Add more source files here
+    src/main.cpp
+    src/other_file.cpp
 )
 
-# Create the executable
-add_executable(${PROJECT_NAME} ${SOURCES})
+# Add your header files (optional)
+set(HEADERS
+    include/your_header.hpp
+)
 
-# Find and link the required Vcpkg libraries
-find_package(VcpkgLibrary1 REQUIRED)
-find_package(VcpkgLibrary2 REQUIRED)
-# Add more find_package() calls for other libraries
+# Add an executable target
+add_executable(YourExecutable ${SOURCES} ${HEADERS})
 
-# Link the Vcpkg libraries to your executable
-target_link_libraries(${PROJECT_NAME}
-    Vcpkg::Library1
-    Vcpkg::Library2
-    # Link other libraries here
+# Add any necessary dependencies (e.g., libraries from vcpkg)
+target_link_libraries(YourExecutable
+    # list your dependencies here
+    # for example: PRIVATE fmt::fmt
+)
+
+# Specify any additional include directories (optional)
+target_include_directories(YourExecutable PRIVATE
+    include
 )

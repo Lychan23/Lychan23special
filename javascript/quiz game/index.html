@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        h1 {
+            margin-top: 20px;
+        }
+
+        #quiz {
+            margin-top: 20px;
+        }
+
+        #question {
+            font-weight: bold;
+        }
+
+        #choices {
+            margin-top: 10px;
+        }
+
+        #feedback {
+            margin-top: 10px;
+        }
+
+        #score {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        #timer {
+            margin-top: 10px;
+            font-weight: bold;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Quiz Game</h1>
+    <div id="quiz">
+        <div id="question"></div>
+        <div id="choices"></div>
+        <button id="nextButton" onclick="nextQuestion()">Next</button>
+        <div id="feedback"></div>
+        <div id="score"></div>
+        <div id="timer"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

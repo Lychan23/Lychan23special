@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Real-time Chat Application</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <div id="chat">
+      <div id="messages"></div>
+      <input id="message-input" type="text" placeholder="Type your message" />
+      <button id="send-button">Send</button>
+    </div>
+
+    <script>
+      const socket = io();
+
+      const messageInput = document.getElementById('message-input');
+      const sendButton = document.getElementById('send-button');
+      const messagesContainer = document.getElementById('messages');
+
+      sendButton.addEventListener('click', () => {
+        const message = messageInput.value.trim();
+        if (message !== '') {
+          socket.emit('send-message', message);
+          messageInput.value = '';
+        }
+      });
+
+      socket.on('connect', () => {
+        const username = prompt('Enter your username:');
+        socket.emit('new-user', username);
+      });
+
+      socket.on('chat-message', (data) => {
+        const { username, message } = data;
+        const messageElement = document.createElement('div');
+        messageElement.innerHTML = `<strong>${username}:</strong> ${message}`;
+        messagesContainer.appendChild(messageElement);
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+      });
+
+      socket.on('user-connected', (username) => {
+        const messageElement = document.createElement('div');
+        messageElement.classList.add('user-join');
+        messageElement.textContent = `${username} joined the chat`;
+        messagesContainer.appendChild(messageElement);
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+      });
+
+      socket.on('user-disconnected', (username) => {
+        const messageElement = document.createElement('div');
+        messageElement.classList.add('user-leave');
+        messageElement.textContent = `${username} left the chat`;
+        messagesContainer.appendChild(messageElement);
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+      });
+    </script>
+  </body>
+</html>

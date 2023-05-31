@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Currency Converter</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: Arial, sans-serif;
+    }
+
+    h1 {
+      margin-top: 50px;
+    }
+
+    .converter {
+      margin-top: 20px;
+    }
+
+    .input-group {
+      margin-bottom: 10px;
+    }
+
+    label {
+      display: inline-block;
+      width: 100px;
+    }
+
+    input[type="number"] {
+      width: 150px;
+    }
+
+    select {
+      width: 150px;
+    }
+
+    button {
+      margin-top: 10px;
+    }
+
+    p.result {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Currency Converter</h1>
+  <div class="converter">
+    <div class="input-group">
+      <label for="amount">Amount:</label>
+      <input type="number" id="amount" />
+    </div>
+    <div class="input-group">
+      <label for="from">From:</label>
+      <select id="from"></select>
+    </div>
+    <div class="input-group">
+      <label for="to">To:</label>
+      <select id="to"></select>
+    </div>
+    <button id="convertBtn">Convert</button>
+    <p class="result">Result: <span id="convertedAmount"></span></p>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script>
+    const apiKey = "d13467a02cf5bb3f5d857fdc";
+    const baseCurrency = "USD"; // Change this if you want a different base currency
+
+    const fromCurrencySelect = document.getElementById("from");
+    const toCurrencySelect = document.getElementById("to");
+    const amountInput = document.getElementById("amount");
+    const convertBtn = document.getElementById("convertBtn");
+    const convertedAmountSpan = document.getElementById("convertedAmount");
+
+    // Fetch list of currencies from the API
+    axios
+      .get(`https://v6.exchangeratesapi.io/latest?access_key=${apiKey}&base=${baseCurrency}`)
+      .then((response) => {
+        const currencies = response.data.rates;
+
+        // Populate currency select options
+        for (const currency in currencies) {
+          const option = document.createElement("option");
+          option.value = currency;
+          option.text = currency;
+          fromCurrencySelect.appendChild(option);
+          toCurrencySelect.appendChild(option.cloneNode(true));
+        }
+      })
+      .catch((error) => {
+        console.log("An error occurred while fetching currencies:", error);
+      });
+
+    // Conversion logic
+    convertBtn.addEventListener("click", () => {
+      const fromCurrency = fromCurrencySelect.value;
+      const toCurrency = toCurrencySelect.value;
+      const amount = parseFloat(amountInput.value);
+
+      if (!isNaN(amount)) {
+        axios
+          .get(`https://v6.exchangeratesapi.io/latest?access_key=${apiKey}&base=${baseCurrency}`)
+          .then((response) => {
+            const exchangeRates = response.data.rates;
+            const rate = exchangeRates[toCurrency] / exchangeRates[fromCurrency];
+            const convertedAmount = (amount * rate).toFixed(2);
+            convertedAmountSpan.textContent = convertedAmount;
+          })
+          .catch((error) => {
+            console.log("An error occurred while fetching exchange rates:", error);
+          });
+      }
+    });
+  </script>
+</body>
+</html>

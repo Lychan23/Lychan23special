@@ -1,0 +1,36 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+h1 {
+    margin-top: 20px;
+}
+
+#app {
+    margin-top: 20px;
+}
+
+#taskInput {
+    padding: 5px;
+    width: 250px;
+}
+
+#addButton {
+    margin-left: 10px;
+}
+
+.taskItem {
+    margin-top: 10px;
+}
+
+.taskItem.completed {
+    text-decoration: line-through;
+    color: gray;
+}
+
+.deleteButton {
+    margin-left: 10px;
+    color: red;
+    cursor: pointer;
+}

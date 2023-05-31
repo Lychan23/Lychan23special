@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>System Weather Information</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: Arial, sans-serif;
+    }
+
+    h1 {
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+  <h1>System Weather Information</h1>
+  <div>
+    <p>Current System Time: <span id="currentTime"></span></p>
+    <p>Current Date: <span id="currentDate"></span></p>
+    <p>Humidity: <span id="humidity"></span></p>
+  </div>
+
+  <script>
+    // Display system time
+    setInterval(() => {
+      const currentTime = new Date();
+      document.getElementById("currentTime").textContent = currentTime.toLocaleTimeString();
+    }, 1000);
+
+    // Display system date
+    setInterval(() => {
+      const currentDate = new Date();
+      document.getElementById("currentDate").textContent = currentDate.toLocaleDateString();
+    }, 1000);
+
+    // Fetch weather information
+    if ("geolocation" in navigator) {
+      navigator.geolocation.getCurrentPosition((position) => {
+        const { latitude, longitude } = position.coords;
+        const apiKey = "4bf621d7ddd4b7ee0cf74829e1ed2eb7";
+        const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}`;
+
+        fetch(weatherUrl)
+          .then((response) => response.json())
+          .then((data) => {
+            const humidity = data.main.humidity;
+            document.getElementById("humidity").textContent = `${humidity}%`;
+          })
+          .catch((error) => {
+            console.log("An error occurred while fetching weather data:", error);
+          });
+      });
+    } else {
+      console.log("Geolocation is not available on this device.");
+    }
+  </script>
+</body>
+</html>

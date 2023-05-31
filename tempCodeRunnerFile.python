@@ -1,0 +1,55 @@
+# This is a comment in Python
+# Comments are used to provide explanations or make notes in the code
+
+# Printing a message to the console
+print("Hello, world!")
+
+# Variables and data types
+message = "Hello, Python!"  # String
+number = 42                # Integer
+floating_point = 3.14      # Floating-point number
+is_true = True             # Boolean (True or False)
+
+# Arithmetic operations
+result = 5 + 3     # Addition
+result = 5 - 3     # Subtraction
+result = 5 * 3     # Multiplication
+result = 5 / 3     # Division (returns a float)
+result = 5 // 3    # Floor division (returns an integer)
+result = 5 % 3     # Modulo (returns the remainder)
+result = 5 ** 3    # Exponentiation (5 raised to the power of 3)
+
+# Conditional statements
+x = 10
+if x > 5:
+    print("x is greater than 5")
+elif x == 5:
+    print("x is equal to 5")
+else:
+    print("x is less than 5")
+
+# Looping
+for i in range(5):
+    print(i)
+
+while x > 0:
+    print(x)
+    x -= 1
+
+# Lists
+fruits = ["apple", "banana", "cherry"]
+print(fruits[0])       # Accessing an element by index
+fruits.append("pear")  # Adding an element to the end
+fruits.remove("banana")# Removing an element
+print(len(fruits))     # Length of the list
+
+# Functions
+def say_hello(name):
+    print("Hello, " + name + "!")
+
+say_hello("Alice")
+
+# Importing modules
+import math
+print(math.sqrt(16))
+

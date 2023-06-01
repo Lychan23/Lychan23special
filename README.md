@@ -32,7 +32,7 @@ Step 4: Enter the code below
 ```bash
 $ git clone https://github.com/Lychan23/Lychan23special.git
 $ cd Lychan23special
-$ npm install
+$ npm install (Node.js Installion needed)
 ```
 
 ## Usage 

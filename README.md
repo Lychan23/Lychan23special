@@ -26,8 +26,8 @@ Lychan23special is a project created by Lychan23, a passionate developer aiming 
 ```
 Step 1: Download git from https://git-scm.com/downloads
 Step 2: Open git bash/command prompt
-Step 3: Enter the code below
-Step 4: When you are using git/cmd prompt make sure the directory u want to install the files is the directory u want.
+Step 3: When you are using git/cmd prompt make sure the directory u want to install the files is the directory u want.
+Step 4: Enter the code below
 ```
 ```bash
 $ git clone https://github.com/Lychan23/Lychan23special.git

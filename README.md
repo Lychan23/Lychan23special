@@ -3,6 +3,10 @@ repository Lychan23 will post their "Coding" ;)
 
 This repository contain basic code so coder can learn.
 
+# Lychan23special
+
+Welcome to Lychan23special repository, where you can find basic code examples to help you learn coding.
+
 ## Table of Contents
 - [Introduction](#introduction)
 - [Features](#features)
@@ -11,12 +15,12 @@ This repository contain basic code so coder can learn.
 
 ## Introduction
 
-This project is created by a guy named Lychan23 that want to help newer developer.
+Lychan23special is a project created by Lychan23, a passionate developer aiming to assist newcomers in their coding journey.
 
 ## Features
 
-- U can learn coding by looking at my code
-- Enjoy ur time
+- Explore a collection of code examples to enhance your coding skills.
+- Enjoy learning and improving your programming knowledge.
 
 ## Installation
 

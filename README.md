@@ -23,7 +23,10 @@ Lychan23special is a project created by Lychan23, a passionate developer aiming 
 - Enjoy learning and improving your programming knowledge.
 
 ## Installation
-
+```
+Step 1: Download git from https://git-scm.com/downloads
+Step 2: Profit
+```
 ```bash
 $ git clone https://github.com/Lychan23/Lychan23special.git
 $ cd Lychan23special

@@ -1,0 +1,26 @@
+# Site Settings
+title: My GitHub Pages Site
+description: This is my awesome website.
+baseurl: ""
+url: ""
+
+# Theme Settings (if applicable)
+theme: jekyll-theme-minimal
+
+# Build Settings
+plugins:
+  - jekyll-feed
+
+# Exclude files and folders from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - README.md
+
+# Markdown Settings
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge

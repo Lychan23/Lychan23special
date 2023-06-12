@@ -6,18 +6,39 @@
         "version": "0.2.0",
         "configurations": [
           {
+            "type": "java",
+            "name": "SnakeGame",
+            "request": "launch",
+            "mainClass": "games.snake.SnakeGame",
+            "projectName": "Lychan23special_da34ef41"
+          },
+          {
+            "type": "java",
+            "name": "Calculator",
+            "request": "launch",
+            "mainClass": "Calculator",
+            "projectName": "Lychan23special_da34ef41"
+          },
+          {
+            "type": "java",
+            "name": "FactorialCalculator",
+            "request": "launch",
+            "mainClass": "FactorialCalculator",
+            "projectName": "Lychan23special_da34ef41"
+          },
+          {
             "name": "C++ Debug",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/your_program_name", // Path to your C++ program
+            "program": "${workspaceFolder}/your_program_name",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],
             "externalConsole": true,
             "MIMode": "gdb",
-            "miDebuggerPath": "/path/to/gdb", // Path to GDB executable
-            "preLaunchTask": "build" // Name of the build task to execute before debugging
+            "miDebuggerPath": "/path/to/gdb",
+            "preLaunchTask": "build"
           }
         ]
       }

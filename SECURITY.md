@@ -2,7 +2,7 @@
 
 # Security
 
-At [Lychan23special], we take security seriously. We strive to ensure that our code and users' data are protected from potential threats. This document outlines the security practices we follow and provides guidance for reporting security vulnerabilities.
+At Lychan23special, we take security seriously. We strive to ensure that our code and users' data are protected from potential threats. This document outlines the security practices we follow and provides guidance for reporting security vulnerabilities.
 
 ## Reporting Security Vulnerabilities
 

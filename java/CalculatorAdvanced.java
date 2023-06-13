@@ -55,7 +55,7 @@ public class CalculatorAdvanced {
                 System.out.println("Square of " + num1 + " is: " + result);
                 break;
 
-            case "^":
+            case "x()":
                 System.out.print("Enter the exponent (max 30): ");
                 int exponent = scanner.nextInt();
                 if (exponent > 30) {

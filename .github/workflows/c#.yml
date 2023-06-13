@@ -4,9 +4,13 @@ on:
   push:
     branches:
       - main
+    paths:
+      - '**.cs'
   pull_request:
     branches:
       - main
+    paths:
+      - '**.cs'
 
 jobs:
   build-and-test:
@@ -36,4 +40,4 @@ jobs:
         run: dotnet build --configuration Release --project c#/dependencies/dependencies.csproj
 
       - name: Run tests
-        run: dotnet test --configuration Release --no-build 
+        run: dotnet test --configuration Release --no-build

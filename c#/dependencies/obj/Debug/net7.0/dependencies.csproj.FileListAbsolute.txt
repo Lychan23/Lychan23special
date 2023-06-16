@@ -13,3 +13,18 @@ C:\Users\62878\Documents\github lyspecial\Lychan23special\c#\dependencies\obj\De
 C:\Users\62878\Documents\github lyspecial\Lychan23special\c#\dependencies\obj\Debug\net7.0\dependencies.pdb
 C:\Users\62878\Documents\github lyspecial\Lychan23special\c#\dependencies\obj\Debug\net7.0\dependencies.genruntimeconfig.cache
 C:\Users\62878\Documents\github lyspecial\Lychan23special\c#\dependencies\obj\Debug\net7.0\ref\dependencies.dll
+C:\Users\62878\Desktop\games\githubs\Lychan23special\Lychan23special\c#\dependencies\bin\Debug\net7.0\dependencies.exe
+C:\Users\62878\Desktop\games\githubs\Lychan23special\Lychan23special\c#\dependencies\bin\Debug\net7.0\dependencies.deps.json
+C:\Users\62878\Desktop\games\githubs\Lychan23special\Lychan23special\c#\dependencies\bin\Debug\net7.0\dependencies.runtimeconfig.json
+C:\Users\62878\Desktop\games\githubs\Lychan23special\Lychan23special\c#\dependencies\bin\Debug\net7.0\dependencies.dll
+C:\Users\62878\Desktop\games\githubs\Lychan23special\Lychan23special\c#\dependencies\bin\Debug\net7.0\dependencies.pdb
+C:\Users\62878\Desktop\games\githubs\Lychan23special\Lychan23special\c#\dependencies\obj\Debug\net7.0\dependencies.csproj.AssemblyReference.cache
+C:\Users\62878\Desktop\games\githubs\Lychan23special\Lychan23special\c#\dependencies\obj\Debug\net7.0\dependencies.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\62878\Desktop\games\githubs\Lychan23special\Lychan23special\c#\dependencies\obj\Debug\net7.0\dependencies.AssemblyInfoInputs.cache
+C:\Users\62878\Desktop\games\githubs\Lychan23special\Lychan23special\c#\dependencies\obj\Debug\net7.0\dependencies.AssemblyInfo.cs
+C:\Users\62878\Desktop\games\githubs\Lychan23special\Lychan23special\c#\dependencies\obj\Debug\net7.0\dependencies.csproj.CoreCompileInputs.cache
+C:\Users\62878\Desktop\games\githubs\Lychan23special\Lychan23special\c#\dependencies\obj\Debug\net7.0\dependencies.dll
+C:\Users\62878\Desktop\games\githubs\Lychan23special\Lychan23special\c#\dependencies\obj\Debug\net7.0\refint\dependencies.dll
+C:\Users\62878\Desktop\games\githubs\Lychan23special\Lychan23special\c#\dependencies\obj\Debug\net7.0\dependencies.pdb
+C:\Users\62878\Desktop\games\githubs\Lychan23special\Lychan23special\c#\dependencies\obj\Debug\net7.0\dependencies.genruntimeconfig.cache
+C:\Users\62878\Desktop\games\githubs\Lychan23special\Lychan23special\c#\dependencies\obj\Debug\net7.0\ref\dependencies.dll

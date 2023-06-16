@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\62878\\Documents\\github lyspecial\\Lychan23special\\c#\\dependencies\\dependencies.csproj",
+      "projectUniqueName": "C:\\Users\\62878\\Desktop\\games\\githubs\\Lychan23special\\Lychan23special\\c#\\dependencies\\dependencies.csproj",
       "projectName": "dependencies",
-      "projectPath": "C:\\Users\\62878\\Documents\\github lyspecial\\Lychan23special\\c#\\dependencies\\dependencies.csproj",
+      "projectPath": "C:\\Users\\62878\\Desktop\\games\\githubs\\Lychan23special\\Lychan23special\\c#\\dependencies\\dependencies.csproj",
       "packagesPath": "C:\\Users\\62878\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\62878\\Documents\\github lyspecial\\Lychan23special\\c#\\dependencies\\obj\\",
+      "outputPath": "C:\\Users\\62878\\Desktop\\games\\githubs\\Lychan23special\\Lychan23special\\c#\\dependencies\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
